@@ -20,6 +20,10 @@
             android:name=".activity.MapActivity"
             android:label="@string/title_activity_map" >
         </activity>
+        <activity
+            android:name=".activity.CreateActivity"
+            android:label="@string/title_activity_create" >
+        </activity>
     </application>
 
 </manifest>

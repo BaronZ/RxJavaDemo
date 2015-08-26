@@ -8,6 +8,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.zzb.rxjavademo.activity.CreateActivity;
 import com.zzb.rxjavademo.activity.MapActivity;
 
 import java.util.ArrayList;
@@ -29,6 +30,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     private List<String> getData() {
         List<String> list = new ArrayList<>();
         list.add(MapActivity.class.getSimpleName());
+        list.add(CreateActivity.class.getSimpleName());
 //        list.add()
         return list;
     }
