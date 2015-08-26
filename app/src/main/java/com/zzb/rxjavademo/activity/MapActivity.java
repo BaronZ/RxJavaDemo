@@ -10,6 +10,11 @@ import rx.Observable;
 import rx.Subscriber;
 import rx.functions.Func1;
 
+/**
+ * Map操作符，可以把一个类型的数据转为另一个类型的数据，再传递下去
+ *@author ZZB
+ *created at 2015/8/26 10:45
+ */
 public class MapActivity extends AppCompatActivity {
     private TextView mTextView;
 
