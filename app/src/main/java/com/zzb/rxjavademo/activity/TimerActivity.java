@@ -27,9 +27,10 @@ public class TimerActivity extends BaseActivity implements View.OnClickListener{
     }
 
     private void sample1(){
+        /**注意内存泄露，解释见{@link IntervalActivity#sample1()}*/
         int delayStart = 1;//1秒后开始
         int interval = 2;//每隔两秒执行一次
-        Observable.timer(0, 2, TimeUnit.SECONDS)//
+        Observable.timer(delayStart, interval, TimeUnit.SECONDS)//与interval.interval(2, TimeUnit.SECONDS)效果一样
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<Long>() {
                     @Override
