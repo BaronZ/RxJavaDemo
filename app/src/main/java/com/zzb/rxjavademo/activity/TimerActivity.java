@@ -23,12 +23,35 @@ public class TimerActivity extends BaseActivity implements View.OnClickListener{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_base);
-        sample();
+        sample1();
+    }
+
+    private void sample1(){
+        int delayStart = 1;//1秒后开始
+        int interval = 2;//每隔两秒执行一次
+        Observable.timer(0, 2, TimeUnit.SECONDS)//
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<Long>() {
+                    @Override
+                    public void onCompleted() {
+                        println(String.format("C3 [%s] XXXX COMPLETE", getCurrentTimestamp()));
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        logE(e);
+                    }
+
+                    @Override
+                    public void onNext(Long number) {
+                        println(String.format("C3 [%s]     NEXT [%d]", getCurrentTimestamp(), number));
+                    }
+                });
     }
     /**
      * 定时器，指定时间后执行
      *@author ZZB
-     *created at 2015/8/28 12:00
+     *created at 2015/8/28 14:00
      */
     private void sample(){
         println("开始timer");

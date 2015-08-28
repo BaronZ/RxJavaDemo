@@ -2,6 +2,7 @@ package com.zzb.rxjavademo.activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -37,8 +38,11 @@ public class BaseActivity extends AppCompatActivity {
     }
 
     protected String getCurrentTimestamp(){
-//        com.zzb.library.utils.TimeUtils
         return TimeUtils.dateToTimeStamp(new Date(), "MM-dd HH:mm:ss");
+    }
+
+    protected void logE(Throwable e){
+        Log.e("RxJavaDemo", "error", e);
     }
 
 
