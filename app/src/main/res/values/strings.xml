@@ -5,4 +5,7 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_map">MapActivity</string>
     <string name="title_activity_create">CreateActivity</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_activity_timing">TimingActivity</string>
+    <string name="title_activity_base">BaseActivity</string>
 </resources>

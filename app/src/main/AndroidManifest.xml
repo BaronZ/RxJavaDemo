@@ -24,6 +24,18 @@
             android:name=".activity.CreateActivity"
             android:label="@string/title_activity_create" >
         </activity>
+        <activity
+            android:name=".activity.DeferActivity"
+            android:label="@string/title_activity_main2" >
+        </activity>
+        <activity
+            android:name=".activity.TimerActivity"
+            android:label="@string/title_activity_timing" >
+        </activity>
+        <activity
+            android:name=".activity.BaseActivity"
+            android:label="@string/title_activity_base" >
+        </activity>
     </application>
 
 </manifest>

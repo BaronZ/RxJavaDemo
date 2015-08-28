@@ -1,7 +1,6 @@
 package com.zzb.rxjavademo.activity;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
 import com.zzb.rxjavademo.R;
@@ -9,24 +8,22 @@ import com.zzb.rxjavademo.R;
 import rx.Observable;
 import rx.Subscriber;
 
-public class CreateActivity extends AppCompatActivity {
+public class CreateActivity extends BaseActivity {
     private TextView mTextView;
-    private StringBuilder displayText = new StringBuilder();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create);
         mTextView = (TextView) findViewById(R.id.tv);
+        setupDisplayText(mTextView);
         sample();
     }
+
     /**
-     * Next: 1
-     * Next: 2
-     * Next: 3
-     * Next: 4
-     * Sequence complete.
+     * Next: 1 Next: 2 Next: 3 Next: 4 Sequence complete.
      */
-    private void sample(){
+    private void sample() {
         Observable.create(new Observable.OnSubscribe<Integer>() {
             @Override
             public void call(Subscriber<? super Integer> observer) {
@@ -59,8 +56,5 @@ public class CreateActivity extends AppCompatActivity {
             }
         });
     }
-    private void println(String text){
-        displayText.append(text).append("\n");
-        mTextView.setText(displayText.toString());
-    }
+
 }
