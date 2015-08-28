@@ -10,6 +10,7 @@ import android.widget.ListView;
 
 import com.zzb.rxjavademo.activity.CreateActivity;
 import com.zzb.rxjavademo.activity.MapActivity;
+import com.zzb.rxjavademo.activity.TimerActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,6 +32,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         List<String> list = new ArrayList<>();
         list.add(MapActivity.class.getSimpleName());
         list.add(CreateActivity.class.getSimpleName());
+        list.add(TimerActivity.class.getSimpleName());
 //        list.add()
         return list;
     }
