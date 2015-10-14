@@ -40,6 +40,8 @@
         <activity android:name=".activity.IntervalActivity" />
         <activity android:name=".activity.DebounceActivity" >
         </activity>
+        <activity android:name=".activity.FlatMapActivity" >
+        </activity>
     </application>
 
 </manifest>

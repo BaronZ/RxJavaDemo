@@ -29,6 +29,9 @@ public class BaseActivity extends AppCompatActivity {
         mTvContent = tv;
     }
 
+    protected void println(){
+        println("======================================");
+    }
     protected void println(String text) {
         mDisplayText.append(text).append("\n");
         if (mTvContent == null) {
