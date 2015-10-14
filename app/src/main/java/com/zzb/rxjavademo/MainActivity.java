@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.zzb.rxjavademo.activity.CreateActivity;
+import com.zzb.rxjavademo.activity.DebounceActivity;
 import com.zzb.rxjavademo.activity.IntervalActivity;
 import com.zzb.rxjavademo.activity.MapActivity;
 import com.zzb.rxjavademo.activity.TimerActivity;
@@ -35,6 +36,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         list.add(CreateActivity.class.getSimpleName());
         list.add(TimerActivity.class.getSimpleName());
         list.add(IntervalActivity.class.getSimpleName());
+        list.add(DebounceActivity.class.getSimpleName());
 //        list.add()
         return list;
     }

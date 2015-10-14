@@ -37,7 +37,9 @@
             android:name=".activity.BaseActivity"
             android:label="@string/title_activity_base" >
         </activity>
-        <activity android:name=".activity.IntervalActivity"/>
+        <activity android:name=".activity.IntervalActivity" />
+        <activity android:name=".activity.DebounceActivity" >
+        </activity>
     </application>
 
 </manifest>
