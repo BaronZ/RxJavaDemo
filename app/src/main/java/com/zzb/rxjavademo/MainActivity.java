@@ -33,12 +33,12 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     private List<String> getData() {
         List<String> list = new ArrayList<>();
-        list.add(MapActivity.class.getSimpleName());
         list.add(CreateActivity.class.getSimpleName());
-        list.add(TimerActivity.class.getSimpleName());
-        list.add(IntervalActivity.class.getSimpleName());
         list.add(DebounceActivity.class.getSimpleName());
         list.add(FlatMapActivity.class.getSimpleName());
+        list.add(IntervalActivity.class.getSimpleName());
+        list.add(MapActivity.class.getSimpleName());
+        list.add(TimerActivity.class.getSimpleName());
 //        list.add()
         return list;
     }
