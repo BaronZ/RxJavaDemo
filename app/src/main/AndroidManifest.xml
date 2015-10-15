@@ -42,6 +42,10 @@
         </activity>
         <activity android:name=".activity.FlatMapActivity" >
         </activity>
+        <activity android:name=".activity.Throttle" >
+        </activity>
+        <activity android:name=".activity.ThrottleActivity" >
+        </activity>
     </application>
 
 </manifest>

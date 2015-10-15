@@ -13,6 +13,7 @@ import com.zzb.rxjavademo.activity.DebounceActivity;
 import com.zzb.rxjavademo.activity.FlatMapActivity;
 import com.zzb.rxjavademo.activity.IntervalActivity;
 import com.zzb.rxjavademo.activity.MapActivity;
+import com.zzb.rxjavademo.activity.ThrottleActivity;
 import com.zzb.rxjavademo.activity.TimerActivity;
 
 import java.util.ArrayList;
@@ -38,6 +39,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         list.add(FlatMapActivity.class.getSimpleName());
         list.add(IntervalActivity.class.getSimpleName());
         list.add(MapActivity.class.getSimpleName());
+        list.add(ThrottleActivity.class.getSimpleName());
         list.add(TimerActivity.class.getSimpleName());
 //        list.add()
         return list;
