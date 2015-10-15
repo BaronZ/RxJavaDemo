@@ -11,11 +11,14 @@ import com.zzb.rxjavademo.R;
 
 import java.util.Date;
 
+import rx.Subscription;
+import rx.subscriptions.CompositeSubscription;
+
 public class BaseActivity extends AppCompatActivity {
 
     private TextView mTvContent;
     protected StringBuffer mDisplayText = new StringBuffer();
-
+    private CompositeSubscription mCompositeSubscription = new CompositeSubscription();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +34,11 @@ public class BaseActivity extends AppCompatActivity {
 
     protected void println(){
         println("======================================");
+    }
+    protected void printErr(String text){
+        mTvContent.post(() -> {
+            println(text);
+        });
     }
     protected void println(String text) {
         mDisplayText.append(text).append("\n");
@@ -48,6 +56,13 @@ public class BaseActivity extends AppCompatActivity {
         Log.e("RxJavaDemo", "error", e);
     }
 
+    protected void addSubscription(Subscription s){
+        mCompositeSubscription.add(s);
+    }
 
-
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mCompositeSubscription.unsubscribe();
+    }
 }
