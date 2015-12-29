@@ -1,8 +1,12 @@
 package com.zzb.rxjavademo.activity;
 
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 
+import com.jakewharton.rxbinding.view.RxView;
 import com.zzb.rxjavademo.R;
 
 import java.util.concurrent.TimeUnit;
@@ -22,6 +26,8 @@ public class ThrottleActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_throttle);
         mEt = $(R.id.edit);
+        Button btn = $(R.id.btn);
+        rxViewThrottleFirst(btn);
         println("Throttle这个事件会有内存泄露，注册反注册");
         println();
         println("throttleFirst: 在每次事件触发后的一定时间间隔内丢弃新的事件。常用作去抖动过滤，例如按钮的点击监听器");
@@ -45,6 +51,19 @@ public class ThrottleActivity extends BaseActivity {
         };
 //        throttleFirst(observer);
         throttleLast(observer);
+    }
+    /**指定时间内只能触发一次*/
+    private void rxViewThrottleFirst(View v){
+//        RxView.clicks(v).throttleFirst(500, TimeUnit.MILLISECONDS)
+//                .subscribe(new Action1<Void>() {
+//                    @Override
+//                    public void call(Void aVoid) {
+//
+//                    }
+//                });
+        RxView.clicks(v).throttleFirst(3000, TimeUnit.MILLISECONDS).subscribe(aVoid -> {
+            Log.d("test", "click");
+        });
     }
     /**
      * 效果与debounce类似，但是效果没有Debounce好，可用来做快速搜索，指定时间内响应最后一个事件

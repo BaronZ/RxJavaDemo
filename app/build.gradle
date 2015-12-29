@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "com.zzb.rxjavademo"
-        minSdkVersion 12
+        minSdkVersion 14
         targetSdkVersion 22
         versionCode 1
         versionName "1.0"
@@ -28,7 +28,7 @@ dependencies {
     compile 'com.android.support:appcompat-v7:22.2.1'
     compile 'io.reactivex:rxandroid:0.25.0'
     compile 'com.zzb.library:android-common:0.4.1'
-
+    compile 'com.jakewharton.rxbinding:rxbinding:0.3.0'
     debugCompile 'com.squareup.leakcanary:leakcanary-android:1.3'
     releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.3'
 }
