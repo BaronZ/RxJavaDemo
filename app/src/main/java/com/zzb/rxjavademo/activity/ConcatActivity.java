@@ -24,6 +24,7 @@ public class ConcatActivity extends BaseActivity implements View.OnClickListener
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_concat);
+        println("Concat操作符是，每个Observable顺序执行，前面的没完成，后面的不能执行，所以可以用这个操作符加takeFirst来做3级缓存");
         println("3次加载之后，就会使用内存的内容");
     }
 
