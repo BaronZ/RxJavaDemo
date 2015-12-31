@@ -8,11 +8,13 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.zzb.rxjavademo.activity.ConcatActivity;
 import com.zzb.rxjavademo.activity.CreateActivity;
 import com.zzb.rxjavademo.activity.DebounceActivity;
 import com.zzb.rxjavademo.activity.FlatMapActivity;
 import com.zzb.rxjavademo.activity.IntervalActivity;
 import com.zzb.rxjavademo.activity.MapActivity;
+import com.zzb.rxjavademo.activity.TestActivity;
 import com.zzb.rxjavademo.activity.ThrottleActivity;
 import com.zzb.rxjavademo.activity.TimerActivity;
 
@@ -41,7 +43,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         list.add(MapActivity.class.getSimpleName());
         list.add(ThrottleActivity.class.getSimpleName());
         list.add(TimerActivity.class.getSimpleName());
-//        list.add()
+        list.add(TestActivity.class.getSimpleName());
+        list.add(ConcatActivity.class.getSimpleName());
         return list;
     }
 
@@ -59,6 +62,5 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-
     }
 }

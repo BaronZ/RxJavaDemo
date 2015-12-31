@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import com.zzb.library.utils.TimeUtils;
 import com.zzb.rxjavademo.R;
+import com.zzb.rxjavademo.Utils;
 
 import java.util.Date;
 
@@ -45,7 +46,11 @@ public class BaseActivity extends AppCompatActivity {
         if (mTvContent == null) {
             mTvContent = (TextView) findViewById(R.id.tv_content);
         }
-        mTvContent.setText(mDisplayText.toString());
+        if(Utils.isMainThread()){
+            mTvContent.setText(mDisplayText.toString());
+        }else{
+            mTvContent.post(() -> mTvContent.setText(mDisplayText.toString()));
+        }
     }
 
     protected String getCurrentTimestamp(){
