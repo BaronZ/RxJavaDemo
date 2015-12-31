@@ -15,6 +15,7 @@ import com.zzb.rxjavademo.activity.FlatMapActivity;
 import com.zzb.rxjavademo.activity.IntervalActivity;
 import com.zzb.rxjavademo.activity.MapActivity;
 import com.zzb.rxjavademo.activity.TestActivity;
+import com.zzb.rxjavademo.activity.ThreadActivity;
 import com.zzb.rxjavademo.activity.ThrottleActivity;
 import com.zzb.rxjavademo.activity.TimerActivity;
 
@@ -23,7 +24,6 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener{
     private ListView mListView;
-    private StringBuffer displayText = new StringBuffer();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,15 +36,16 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     private List<String> getData() {
         List<String> list = new ArrayList<>();
+        list.add(ConcatActivity.class.getSimpleName());
         list.add(CreateActivity.class.getSimpleName());
         list.add(DebounceActivity.class.getSimpleName());
         list.add(FlatMapActivity.class.getSimpleName());
         list.add(IntervalActivity.class.getSimpleName());
         list.add(MapActivity.class.getSimpleName());
+        list.add(ThreadActivity.class.getSimpleName());
         list.add(ThrottleActivity.class.getSimpleName());
         list.add(TimerActivity.class.getSimpleName());
         list.add(TestActivity.class.getSimpleName());
-        list.add(ConcatActivity.class.getSimpleName());
         return list;
     }
 

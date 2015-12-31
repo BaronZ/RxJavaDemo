@@ -50,6 +50,8 @@
         </activity>
         <activity android:name=".activity.ConcatActivity">
         </activity>
+        <activity android:name=".activity.ThreadActivity">
+        </activity>
     </application>
 
 </manifest>
