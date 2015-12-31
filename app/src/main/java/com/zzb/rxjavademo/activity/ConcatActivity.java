@@ -9,6 +9,7 @@ import com.zzb.rxjavademo.Utils;
 import rx.Observable;
 import rx.Observable.OnSubscribe;
 import rx.Subscriber;
+import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
 /**
@@ -82,7 +83,9 @@ public class ConcatActivity extends BaseActivity implements View.OnClickListener
                 subscriber.onNext(mNet);
                 subscriber.onCompleted();
             }
-        }).doOnNext(s -> {
+        })      //create在io线程跑，doOnNext在ui线程跑
+                .subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread())
+                .doOnNext(s -> {
             if (s != null) {
                 //cache to disk
                 println("缓存数据到文件：" + Utils.isMainThread());
