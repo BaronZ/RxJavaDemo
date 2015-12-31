@@ -52,7 +52,10 @@ public class BaseActivity extends AppCompatActivity {
             mTvContent.post(() -> mTvContent.setText(mDisplayText.toString()));
         }
     }
-
+    protected void clearText(){
+        mDisplayText = new StringBuffer();
+        println("");
+    }
     protected String getCurrentTimestamp(){
         return TimeUtils.dateToTimeStamp(new Date(), "MM-dd HH:mm:ss");
     }

@@ -1,6 +1,7 @@
 package com.zzb.rxjavademo.activity;
 
 import android.os.Bundle;
+import android.view.View;
 
 import com.zzb.rxjavademo.R;
 import com.zzb.rxjavademo.Utils;
@@ -12,21 +13,27 @@ import rx.schedulers.Schedulers;
 
 /**
  * Concat操作符是，每个Observable顺序执行，前面的没完成，后面的不能执行，所以可以用这个操作符加takeFirst来做3级缓存
- *created by ZZB at 2015/12/31 10:16
+ * created by ZZB at 2015/12/31 10:16
  */
-public class ConcatActivity extends BaseActivity {
+public class ConcatActivity extends BaseActivity implements View.OnClickListener {
     private static final String TAG = ConcatActivity.class.getSimpleName();
     private static String mMemory, mDisk, mNet;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_concat);
+        println("3次加载之后，就会使用内存的内容");
+    }
+
+    private void load() {
         Observable.concat(memory(), disk(), net())
                 //如果没有takeFirst，每个Observable会顺序执行
                 .takeFirst(s -> s != null).subscribe(s -> {
             println("获取的内容：" + s);
         });
     }
+
     private Observable<String> memory() {
         return Observable.create(new OnSubscribe<String>() {
             @Override
@@ -76,11 +83,26 @@ public class ConcatActivity extends BaseActivity {
                 subscriber.onCompleted();
             }
         }).doOnNext(s -> {
-            if(s != null){
+            if (s != null) {
                 //cache to disk
                 println("缓存数据到文件：" + Utils.isMainThread());
                 mDisk = "save data to disk:(" + s + ")";
             }
         });
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.btn_load:
+                load();
+                break;
+            case R.id.btn_clear:
+                mMemory = null;
+                mNet = null;
+                mDisk = null;
+                clearText();
+                break;
+        }
     }
 }
