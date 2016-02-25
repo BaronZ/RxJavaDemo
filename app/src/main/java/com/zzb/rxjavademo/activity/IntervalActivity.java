@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.zzb.rxjavademo.R;
+import com.zzb.rxjavademo.Utils;
 
 import java.util.concurrent.TimeUnit;
 
@@ -11,6 +12,9 @@ import rx.Observable;
 import rx.Observer;
 import rx.Subscription;
 import rx.android.schedulers.AndroidSchedulers;
+import rx.functions.Action0;
+import rx.functions.Action1;
+import rx.schedulers.Schedulers;
 
 /**
  * Created by ZZB on 2015/8/28.
@@ -21,7 +25,7 @@ public class IntervalActivity extends BaseActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_base);
-        sample1();
+        sample2();
     }
     
     /**
@@ -53,6 +57,20 @@ public class IntervalActivity extends BaseActivity{
                         println(String.format("D4 [%s]     NEXT [%s]", getCurrentTimestamp(), number.toString()));
                     }
                 });
+    }
+    private void sample2(){
+        mSubscription = Observable.interval(1, TimeUnit.SECONDS).take(5).doOnNext(new Action1<Long>() {
+            @Override
+            public void call(Long number) {
+
+                println(String.format("doOnNext [%s]     NEXT [%s] %b", getCurrentTimestamp(), number.toString(), Utils.isMainThread()));
+            }
+        }).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).finallyDo(new Action0() {
+            @Override
+            public void call() {
+                println(String.format("finallyDo [%s] %b", getCurrentTimestamp(), Utils.isMainThread()));
+            }
+        }).subscribe();
     }
     public void onClick(View v){
         mSubscription.unsubscribe();//停止循环
