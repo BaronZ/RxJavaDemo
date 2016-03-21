@@ -25,7 +25,7 @@ public class IntervalActivity extends BaseActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_base);
-        sample2();
+        sample3();
     }
     
     /**
@@ -71,6 +71,14 @@ public class IntervalActivity extends BaseActivity{
                 println(String.format("finallyDo [%s] %b", getCurrentTimestamp(), Utils.isMainThread()));
             }
         }).subscribe();
+    }
+    private void sample3(){
+        mSubscription = Observable.interval(1, TimeUnit.SECONDS).observeOn(Schedulers.io()).subscribe(new Action1<Long>() {
+            @Override
+            public void call(Long aLong) {
+                println(String.format("subscribe [%s] %b", getCurrentTimestamp(), Utils.isMainThread()));
+            }
+        });
     }
     public void onClick(View v){
         mSubscription.unsubscribe();//停止循环
