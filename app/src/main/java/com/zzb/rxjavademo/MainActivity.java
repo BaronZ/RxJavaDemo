@@ -36,16 +36,17 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     private List<String> getData() {
         List<String> list = new ArrayList<>();
+        list.add(TestActivity.class.getSimpleName());
         list.add(ConcatActivity.class.getSimpleName());
         list.add(CreateActivity.class.getSimpleName());
         list.add(DebounceActivity.class.getSimpleName());
         list.add(FlatMapActivity.class.getSimpleName());
         list.add(IntervalActivity.class.getSimpleName());
         list.add(MapActivity.class.getSimpleName());
+//        list.add(SwitchMapActivity.class.getSimpleName());
         list.add(ThreadActivity.class.getSimpleName());
         list.add(ThrottleActivity.class.getSimpleName());
         list.add(TimerActivity.class.getSimpleName());
-        list.add(TestActivity.class.getSimpleName());
         return list;
     }
 
