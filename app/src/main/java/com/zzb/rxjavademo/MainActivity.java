@@ -11,6 +11,7 @@ import android.widget.ListView;
 import com.zzb.rxjavademo.activity.ConcatActivity;
 import com.zzb.rxjavademo.activity.CreateActivity;
 import com.zzb.rxjavademo.activity.DebounceActivity;
+import com.zzb.rxjavademo.activity.DistinctActivity;
 import com.zzb.rxjavademo.activity.FlatMapActivity;
 import com.zzb.rxjavademo.activity.IntervalActivity;
 import com.zzb.rxjavademo.activity.MapActivity;
@@ -40,6 +41,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         list.add(ConcatActivity.class.getSimpleName());
         list.add(CreateActivity.class.getSimpleName());
         list.add(DebounceActivity.class.getSimpleName());
+        list.add(DistinctActivity.class.getSimpleName());
         list.add(FlatMapActivity.class.getSimpleName());
         list.add(IntervalActivity.class.getSimpleName());
         list.add(MapActivity.class.getSimpleName());
@@ -49,8 +51,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         list.add(TimerActivity.class.getSimpleName());
         return list;
     }
-
-
 
 
     @Override
