@@ -6,6 +6,7 @@ RxJava的demo
 [concat](https://github.com/BaronZ/RxJavaDemo/blob/master/app/src/main/java/com/zzb/rxjavademo/activity/ConcatActivity.java)  
 [create](https://github.com/BaronZ/RxJavaDemo/blob/master/app/src/main/java/com/zzb/rxjavademo/activity/CreateActivity.java)  
 [debounce](https://github.com/BaronZ/RxJavaDemo/blob/master/app/src/main/java/com/zzb/rxjavademo/activity/DebounceActivity.java)  
+[distinct](https://github.com/BaronZ/RxJavaDemo/blob/master/app/src/main/java/com/zzb/rxjavademo/activity/DistinctActivity.java)  
 [FlatMap](https://github.com/BaronZ/RxJavaDemo/blob/master/app/src/main/java/com/zzb/rxjavademo/activity/FlatMapActivity.java)  
 [interval](https://github.com/BaronZ/RxJavaDemo/blob/master/app/src/main/java/com/zzb/rxjavademo/activity/IntervalActivity.java)  
 [map](https://github.com/BaronZ/RxJavaDemo/blob/master/app/src/main/java/com/zzb/rxjavademo/activity/MapActivity.java)  
