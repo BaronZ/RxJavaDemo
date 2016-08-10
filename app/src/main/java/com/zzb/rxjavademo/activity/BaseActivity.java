@@ -42,7 +42,21 @@ public class BaseActivity extends AppCompatActivity {
         });
     }
     protected void println(String text) {
+        appendTextWithWrapLine(text);
+        print();
+    }
+    protected void print(String text){
+        appendTextWithoutWrapLine(text);
+        print();
+    }
+    private void appendTextWithWrapLine(String text){
         mDisplayText.append(text).append("\n");
+    }
+    private void appendTextWithoutWrapLine(String text) {
+        mDisplayText.append(text);
+    }
+
+    private void print(){
         if (mTvContent == null) {
             mTvContent = (TextView) findViewById(R.id.tv_content);
         }
