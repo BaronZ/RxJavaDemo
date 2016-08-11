@@ -25,10 +25,7 @@
             android:name=".activity.CreateActivity"
             android:label="@string/title_activity_create">
         </activity>
-        <activity
-            android:name=".activity.DeferActivity"
-            android:label="@string/title_activity_main2">
-        </activity>
+
         <activity
             android:name=".activity.TimerActivity"
             android:label="@string/title_activity_timing">
@@ -42,8 +39,7 @@
         </activity>
         <activity android:name=".activity.FlatMapActivity">
         </activity>
-        <activity android:name=".activity.Throttle">
-        </activity>
+
         <activity android:name=".activity.ThrottleActivity">
         </activity>
         <activity android:name=".activity.TestActivity">
@@ -54,6 +50,7 @@
         </activity>
         <activity android:name=".activity.DistinctActivity">
         </activity>
+        <activity android:name=".activity.TakeUntilActivity"/>
     </application>
 
 </manifest>
