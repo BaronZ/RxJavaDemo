@@ -14,7 +14,7 @@ public class TakeUntilActivity extends DefaultBaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        println("takeUntil 操作符会一直操作，直到操作符合一定条件，就停止不往后走");
+        println("takeUntil 操作符会一直操作，不符合条件的就走subscribe, 直到操作符合一定条件，就停止不往后走");
         approach1();
         println();
         approach2();

@@ -14,6 +14,7 @@ import com.zzb.rxjavademo.activity.DebounceActivity;
 import com.zzb.rxjavademo.activity.DistinctActivity;
 import com.zzb.rxjavademo.activity.FlatMapActivity;
 import com.zzb.rxjavademo.activity.IntervalActivity;
+import com.zzb.rxjavademo.activity.LastOrDefaultActivity;
 import com.zzb.rxjavademo.activity.MapActivity;
 import com.zzb.rxjavademo.activity.TakeUntilActivity;
 import com.zzb.rxjavademo.activity.TestActivity;
@@ -45,6 +46,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         list.add(DistinctActivity.class.getSimpleName());
         list.add(FlatMapActivity.class.getSimpleName());
         list.add(IntervalActivity.class.getSimpleName());
+        list.add(LastOrDefaultActivity.class.getSimpleName());
         list.add(MapActivity.class.getSimpleName());
         list.add(TakeUntilActivity.class.getSimpleName());
 //        list.add(SwitchMapActivity.class.getSimpleName());
