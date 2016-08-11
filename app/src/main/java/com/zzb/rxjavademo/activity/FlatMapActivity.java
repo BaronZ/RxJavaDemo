@@ -26,6 +26,8 @@ public class FlatMapActivity extends BaseActivity {
         approach1();
         println();
         approach2();
+        println();
+        approach3();
     }
 
     private void approach2() {
@@ -80,5 +82,27 @@ public class FlatMapActivity extends BaseActivity {
             println(s);
         });
     }
-
+    //1,2,3,4
+    // f1(1)->f2(1)->s, f1(1)->f2(2)->s, f1(1)->f2(3)->s
+    // f1(2)->f2(1)->s, f1(2)->f2(2)->s, f1(2)->f2(3)->s
+    private void approach3(){
+        Observable.just(1, 2, 3, 4).flatMap(new Func1<Integer, Observable<String>>() {
+            @Override
+            public Observable<String> call(Integer integer) {
+                println("value from just========================: " + integer);
+                return Observable.from(new String[]{String.valueOf(integer), String.valueOf(integer + 1)});
+            }
+        }).flatMap(new Func1<String, Observable<Integer>>() {
+            @Override
+            public Observable<Integer> call(String s) {
+                println("value from flatMap1+++++ " + s);
+                return Observable.from(new Integer[]{Integer.valueOf(s) - 5, Integer.valueOf(s) + 5, Integer.valueOf(s) + 10, Integer.valueOf(s) + 15});
+            }
+        }).subscribe(new Action1<Integer>() {
+            @Override
+            public void call(Integer integer) {
+                println("subscribe: " + integer);
+            }
+        });
+    }
 }
