@@ -9,7 +9,6 @@ import java.util.Arrays;
 import java.util.List;
 
 import rx.Observable;
-import rx.Observer;
 import rx.functions.Action1;
 import rx.functions.Func1;
 
@@ -65,21 +64,8 @@ public class FlatMapActivity extends BaseActivity {
                 data.text = s;
                 return data;
             }
-        }).subscribe(new Observer<Data>() {
-            @Override
-            public void onCompleted() {
-
-            }
-
-            @Override
-            public void onError(Throwable e) {
-
-            }
-
-            @Override
-            public void onNext(Data data) {
-                println("map:" + data.text);
-            }
+        }).subscribe(data -> {
+            println("map:" + data.text);
         });
     }
 
@@ -90,21 +76,9 @@ public class FlatMapActivity extends BaseActivity {
                 //<T> Observable<T> from(Iterable<? extends T> iterable)
                 return Observable.from(strings);
             }
-        }).subscribe(new Observer<String>() {
-            @Override
-            public void onCompleted() {
-
-            }
-
-            @Override
-            public void onError(Throwable e) {
-
-            }
-
-            @Override
-            public void onNext(String s) {
-                println(s);
-            }
+        }).subscribe(s -> {
+            println(s);
         });
     }
+
 }
