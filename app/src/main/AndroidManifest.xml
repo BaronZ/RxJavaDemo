@@ -52,6 +52,7 @@
         </activity>
         <activity android:name=".activity.TakeUntilActivity"/>
         <activity android:name=".activity.LastOrDefaultActivity"/>
+        <activity android:name=".activity.MergeActivity"/>
     </application>
 
 </manifest>
