@@ -11,6 +11,7 @@ RxJava的demo
 [interval](https://github.com/BaronZ/RxJavaDemo/blob/master/app/src/main/java/com/zzb/rxjavademo/activity/IntervalActivity.java)  
 [lastOrDefault](https://github.com/BaronZ/RxJavaDemo/blob/master/app/src/main/java/com/zzb/rxjavademo/activity/LastOrDefaultActivity.java)  
 [map](https://github.com/BaronZ/RxJavaDemo/blob/master/app/src/main/java/com/zzb/rxjavademo/activity/MapActivity.java)  
+[merge](https://github.com/BaronZ/RxJavaDemo/blob/master/app/src/main/java/com/zzb/rxjavademo/activity/MergeActivity.java)  
 [takeUntil](https://github.com/BaronZ/RxJavaDemo/blob/master/app/src/main/java/com/zzb/rxjavademo/activity/TakeUntilActivity.java)  
 [Throttle](https://github.com/BaronZ/RxJavaDemo/blob/master/app/src/main/java/com/zzb/rxjavademo/activity/ThrottleActivity.java)  
 [timer](https://github.com/BaronZ/RxJavaDemo/blob/master/app/src/main/java/com/zzb/rxjavademo/activity/TimerActivity.java)  
