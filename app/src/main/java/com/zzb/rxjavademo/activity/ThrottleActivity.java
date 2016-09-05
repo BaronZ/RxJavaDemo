@@ -17,6 +17,8 @@ import rx.Subscription;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.android.widget.OnTextChangeEvent;
 import rx.android.widget.WidgetObservable;
+import rx.functions.Action1;
+import rx.subjects.PublishSubject;
 
 public class ThrottleActivity extends BaseActivity {
     private EditText mEt;
@@ -54,13 +56,6 @@ public class ThrottleActivity extends BaseActivity {
     }
     /**指定时间内只能触发一次*/
     private void rxViewThrottleFirst(View v){
-//        RxView.clicks(v).throttleFirst(500, TimeUnit.MILLISECONDS)
-//                .subscribe(new Action1<Void>() {
-//                    @Override
-//                    public void call(Void aVoid) {
-//
-//                    }
-//                });
         RxView.clicks(v).throttleFirst(3000, TimeUnit.MILLISECONDS).subscribe(aVoid -> {
             Log.d("test", "click");
         });
@@ -84,5 +79,15 @@ public class ThrottleActivity extends BaseActivity {
                 .subscribe(observer);
         addSubscription(mSubscription);
     }
-    
+    private PublishSubject<String> mPublishSubject = PublishSubject.create();
+    //mPublishSubject.onNext即可触发，10秒钟之内只能触发一次
+    private void throttleViaPublishSubject(){
+        mPublishSubject.throttleFirst(10, TimeUnit.SECONDS).subscribe(new Action1<String>() {
+            @Override
+            public void call(String s) {
+                //onNext
+            }
+        });
+    }
+
 }
