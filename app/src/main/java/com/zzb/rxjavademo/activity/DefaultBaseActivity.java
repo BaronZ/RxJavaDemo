@@ -14,7 +14,7 @@ public class DefaultBaseActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_create);
+        setContentView(R.layout.activity_default_base);
         mTextView = (TextView) findViewById(R.id.tv);
         setupDisplayText(mTextView);
     }

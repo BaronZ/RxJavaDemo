@@ -53,6 +53,7 @@
         <activity android:name=".activity.TakeUntilActivity"/>
         <activity android:name=".activity.LastOrDefaultActivity"/>
         <activity android:name=".activity.MergeActivity"/>
+        <activity android:name=".activity.ZipActivity"/>
     </application>
 
 </manifest>

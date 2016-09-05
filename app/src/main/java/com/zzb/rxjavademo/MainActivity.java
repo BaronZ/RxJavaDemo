@@ -22,6 +22,7 @@ import com.zzb.rxjavademo.activity.TestActivity;
 import com.zzb.rxjavademo.activity.ThreadActivity;
 import com.zzb.rxjavademo.activity.ThrottleActivity;
 import com.zzb.rxjavademo.activity.TimerActivity;
+import com.zzb.rxjavademo.activity.ZipActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -55,6 +56,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         list.add(ThreadActivity.class.getSimpleName());
         list.add(ThrottleActivity.class.getSimpleName());
         list.add(TimerActivity.class.getSimpleName());
+        list.add(ZipActivity.class.getSimpleName());
         return list;
     }
 
