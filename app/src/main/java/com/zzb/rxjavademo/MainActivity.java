@@ -17,19 +17,21 @@ import com.zzb.rxjavademo.activity.IntervalActivity;
 import com.zzb.rxjavademo.activity.LastOrDefaultActivity;
 import com.zzb.rxjavademo.activity.MapActivity;
 import com.zzb.rxjavademo.activity.MergeActivity;
+import com.zzb.rxjavademo.activity.PublishSubjectActivity;
 import com.zzb.rxjavademo.activity.TakeUntilActivity;
 import com.zzb.rxjavademo.activity.TestActivity;
 import com.zzb.rxjavademo.activity.ThreadActivity;
 import com.zzb.rxjavademo.activity.ThrottleActivity;
+import com.zzb.rxjavademo.activity.TimeoutActivity;
 import com.zzb.rxjavademo.activity.TimerActivity;
 import com.zzb.rxjavademo.activity.ZipActivity;
-import com.zzb.rxjavademo.activity.PublishSubjectActivity;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener{
+public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
     private ListView mListView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,6 +59,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 //        list.add(SwitchMapActivity.class.getSimpleName());
         list.add(ThreadActivity.class.getSimpleName());
         list.add(ThrottleActivity.class.getSimpleName());
+        list.add(TimeoutActivity.class.getSimpleName());
         list.add(TimerActivity.class.getSimpleName());
         list.add(ZipActivity.class.getSimpleName());
         return list;

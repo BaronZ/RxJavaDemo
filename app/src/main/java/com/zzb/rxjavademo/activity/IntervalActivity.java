@@ -25,7 +25,7 @@ public class IntervalActivity extends BaseActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_base);
-        sample3();
+        sample1();
     }
     
     /**
@@ -40,7 +40,7 @@ public class IntervalActivity extends BaseActivity{
         println("开始interval");
         mSubscription = Observable//效果与Observable.timer(0, 1, TimeUnit.SECONDS)一样
                 .interval(1, TimeUnit.SECONDS)//间隔时间一秒
-                .take(60)//运行60次，即60秒内，每秒回调一次
+                .take(4)//运行60次，即60秒内，每秒回调一次
                 .observeOn(AndroidSchedulers.mainThread())//
                 .subscribe(new Observer<Long>() {
                     @Override
