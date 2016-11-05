@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.zzb.rxjavademo.activity.ConcatActivity;
+import com.zzb.rxjavademo.activity.ConcatMapActivity;
 import com.zzb.rxjavademo.activity.CreateActivity;
 import com.zzb.rxjavademo.activity.DebounceActivity;
 import com.zzb.rxjavademo.activity.DistinctActivity;
@@ -46,6 +47,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         List<String> list = new ArrayList<>();
         list.add(TestActivity.class.getSimpleName());
         list.add(ConcatActivity.class.getSimpleName());
+        list.add(ConcatMapActivity.class.getSimpleName());
         list.add(CreateActivity.class.getSimpleName());
         list.add(DebounceActivity.class.getSimpleName());
         list.add(DistinctActivity.class.getSimpleName());

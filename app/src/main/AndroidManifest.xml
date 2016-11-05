@@ -56,6 +56,7 @@
         <activity android:name=".activity.ZipActivity"/>
         <activity android:name=".activity.PublishSubjectActivity"/>
         <activity android:name=".activity.TimeoutActivity"/>
+        <activity android:name=".activity.ConcatMapActivity"/>
     </application>
 
 </manifest>
